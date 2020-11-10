@@ -40,7 +40,7 @@
             <div class="text-center">
                 <h4>Data Tidak Ditemukan Silahkan <a href="{{route('list.doctor')}}">Kembali</a></h4>
                 <br>
-                <img src="{{ asset('storage/images/sorry1.png') }}"  alt="Sorry">
+                <img src="{{ asset('images/sorry1.png') }}"  alt="Sorry">
             </div>
         <hr>
         @endif

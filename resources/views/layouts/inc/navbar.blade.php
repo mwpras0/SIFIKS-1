@@ -1,12 +1,26 @@
 <nav class="navbar navbar-expand-md text-body navbar-primary bg-white">
     <a class="navbar-brand" href="/">
-        <img src="{{ asset('storage/images/sifiks4.png') }}" alt="sifiks4" width="125" class="d-inline-block align-top" border="0">
+        <img src="{{ asset('images/sifiks4.png') }}" alt="sifiks4" width="125" class="d-inline-block align-top" border="0">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle Navbar">
         <i class="fas fa-ellipsis-h fa-lg" style="color:#3588cd;"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
+            @guest
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Info Kesehatan
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('list.articles', ['category' => 'penyakit']) }}">Penyakit</a>
+                    <a class="dropdown-item" href="{{ route('list.articles', ['category' => 'obat']) }}">Obat - obatan</a>
+                    <a class="dropdown-item" href="{{ route('list.articles', ['category' => 'hidup-sehat']) }}">Hidup Sehat</a>
+                    <a class="dropdown-item" href="{{ route('list.articles', ['category' => 'keluarga']) }}">Keluarga</a>
+                    <a class="dropdown-item" href="{{ route('list.articles', ['category' => 'kesehatan']) }}">Kesehatan</a>
+                </div>
+            </li>
+            @else
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Info Kesehatan
@@ -23,8 +37,9 @@
                 <a class="nav-link" href="{{route('search.doctor')}}">Cari Dokter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('search.index.hospital')}}">Cari Rumah Sakit</a>
+                <a class="nav-link" href="{{route('search.medicine')}}">Beli Obat</a>
             </li>
+            @endguest
         </ul>
         <hr>
         <ul class="navbar-nav">

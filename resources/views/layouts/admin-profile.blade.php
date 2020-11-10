@@ -17,7 +17,7 @@
         <div class="col col-md-3">
             <div class="box box-primary">
                 <div class="box-body box-profile">
-                    <img class="profile-user-img img-responsive img-circle" src="{{ asset('storage/user_images/'.$data[session('guard')]->profile_picture) }}" alt="User profile picture">
+                    <img class="profile-user-img img-responsive img-circle" src="{{ asset('user_images/'.$data[session('guard')]->profile_picture) }}" alt="User profile picture">
                     <h3 class="profile-username text-center">
                         <h4 class="text-center">
                             {{ Auth::guard('doctor')->check() ? 'dr.' : ''}}

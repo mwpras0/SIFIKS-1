@@ -4,22 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Medicine extends Model
 {
     /**
      * @var string
      */
-    protected $table = 'rooms';
+    protected $table = 'medicine';
 
     /**
      * @var string
      */
-    protected $primaryKey = 'id';
+    public $primarykey = 'id';
 
     /**
      * @var bool
      */
-    public $timestamps = true;
+    public $timestamp = true;
 
     /**
      * @var array
@@ -28,6 +28,5 @@ class Room extends Model
         'created_at',
         'updated_at'
     ];
+
 }
-
-

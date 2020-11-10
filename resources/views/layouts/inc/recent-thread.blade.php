@@ -5,7 +5,7 @@
         <div class="box box-widget">
             <div class="box-header with-border">
                 <div class="user-block">
-                    <img class="img-circle" src="{{ asset('storage/user_images/'.$thread->user->profile_picture) }}" alt="User Image">
+                    <img class="img-circle" src="{{ asset('user_images/'.$thread->user->profile_picture) }}" alt="User Image">
                     <span class="username">{{ $thread->user->name }}</span>
                     <span class="description">{{ $thread->created_at->diffForHumans() }}</span>
 
@@ -36,4 +36,3 @@
         {{ $data['threads']->links() }}
     </div>
 </div>
-

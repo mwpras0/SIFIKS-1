@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-md-6" >
                   {{-- <div class="img-fluid"> --}}
-                      <img src="{{ asset('storage/images/dokterhome.png') }}" class="float-right" alt="Dokter" width="100%">
+                      <img src="{{ asset('images/dokterhome.png') }}" class="float-right" alt="Dokter" width="100%">
                   {{-- </div> --}}
               </div>
             </div>
@@ -137,9 +137,9 @@
                         <div class="row no-gutters">
                             <div class="col-md-4">
                                 @if($doctor->profile_picture != null)
-                                <img src="{{ asset('storage/user_images/').'/'.$doctor->profile_picture }}" alt="{{$doctor->name}}" class="card-img" >
+                                <img src="{{ asset('user_images/').'/'.$doctor->profile_picture }}" alt="{{$doctor->name}}" class="card-img" >
                                 @else
-                                <img src="{{ asset('storage/images/felicia.jpg') }}" alt="{{$doctor->name}}" class="card-img" >
+                                <img src="{{ asset('images/felicia.jpg') }}" alt="{{$doctor->name}}" class="card-img" >
                                 @endif
                             </div>
                             <div class="col-md-8">

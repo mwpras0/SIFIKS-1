@@ -51,6 +51,12 @@ Route::prefix('searchdoctor')->group(function() {
     Route::get('/','SpecializationController@indexSearch')->name('search.doctor');
 });
 
+Route::prefix('searchobat')->group(function(){
+    Route::get('/', 'MedicineController@indexUser')->name('search.medicine');
+    Route::post('/cari','MedicineController@searchMedicine')->name('search.medicines');
+    Route::get('/viewmedicine/{id}', 'MedicineController@showMedicine')->name('show.medicine');
+});
+
 Route::get('/articles/{category}', 'ArticleController@listByCat')->name('list.articles');
 Route::get('/articles/{category}/{key}','ArticleController@listByName')->name('listName.articles');
 Route::post('/articles/{category}/{cari}','ArticleController@search')->name('cari.articles');
@@ -106,7 +112,7 @@ Route::prefix('admin')->group( function() {
         'member' => 'MemberController',
         'doctor' => 'DoctorController',
         'specialty' => 'SpecializationController',
-        'hospital' => 'HospitalController'
+        'medicine' => 'MedicineController'
     ]);
 
     Route::get('/article', 'ArticleController@index')->name('admin.article.index');
@@ -118,15 +124,6 @@ Route::prefix('admin')->group( function() {
     Route::get('/thread/{query}', 'ThreadController@index')->name('admin.thread.index');
     Route::get('/thread/{thread}/show', 'ThreadController@show')->name('admin.thread.show');
     Route::delete('/thread/{thread}/destroy', 'ThreadController@destroy')->name('admin.thread.destroy');
-
-    //Hospital's Rooms Controller -->
-    Route::get('/room/{room_id}/{hospital_id}/edit', 'RoomController@edit')->name('room.edit');
-    Route::get('/room/{hospital_id}/room/add', 'RoomController@create')->name('room.create');
-    Route::delete('/room/{room_id}/{hospital_id}/destroy', 'RoomController@destroy')->name('room.destroy');
-    Route::get('/room/{room_id}/{hospital_id}', 'RoomController@show')->name('room.show');
-    Route::resource('room', 'RoomController')->except([
-        'edit', 'create', 'destroy', 'show'
-    ]);
 
     // Home
     Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');

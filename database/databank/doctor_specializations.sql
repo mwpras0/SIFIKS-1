@@ -1,6 +1,6 @@
 # UBAH LINE 3 SESUAI DENGAN NAMA DATABASE KALIAN e.g 'USE db_sifiks'
 
-USE nama_database;
+USE db_sifiks;
 INSERT INTO doctor_specializations (degree, name, created_at, updated_at)
 VALUES
        ('Sp.A', 'Spesialis Anak', NOW(), NOW()),

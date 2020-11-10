@@ -18,7 +18,7 @@
                     @foreach($data['doctor']->hospital as $hospital)
                         <div class="row bg-gray-light" style="margin:10px 0; border: 1px solid #ddd; padding: 10px 0;">
                             <div class="col-md-4" style="padding-right: 0 !important;">
-                                <img src="{{ asset('storage/images/hospital-illustration.jpg') }}" class="img-responsive" alt="Hospital">
+                                <img src="{{ asset('images/hospital-illustration.jpg') }}" class="img-responsive" alt="Hospital">
                             </div>
                             <div class="col col-md-8">
                                 <strong style="font-size: 1.8rem;">{{ $hospital->name }}</strong>
@@ -67,7 +67,7 @@
                                     <div class="col-md-12 bg-gray-light" style="padding: 10px;">
                                         <div class="row">
                                             <div class="col-md-4" style="padding-right: 0 !important;">
-                                                <img src="{{ asset('storage/images/hospital-illustration.jpg') }}" class="img-responsive" alt="Hospital">
+                                                <img src="{{ asset('images/hospital-illustration.jpg') }}" class="img-responsive" alt="Hospital">
                                             </div>
                                             <div class="col col-md-8">
                                                 <strong style="font-size: 1.8rem;">{{ $h->name }}</strong>

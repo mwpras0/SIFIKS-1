@@ -13,7 +13,7 @@
                     <div class="modal-header p-3">
                         <div class="row justify-content-center">
                             <div class="col-md-4">
-                                <img src="{{ asset('storage/user_images/'.$data['user']->profile_picture) }}" class="img-fluid profile-pict" alt="Foto Anda">
+                                <img src="{{ asset('user_images/'.$data['user']->profile_picture) }}" class="img-fluid profile-pict" alt="Foto Anda">
                             </div>
                         </div>
                     </div>

@@ -241,60 +241,7 @@ class DocController extends Controller
         }
         return redirect(route('doctor.dashboard'))->with('failed', 'Penghapusan akun gagal.');
     }
-
-    /**
-     * Show Hospital page on profile
-     *
-     * @param $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
-     */
-    public function hospital($id)
-    {
-        $doctor = $this->currentUser();
-        if($doctor->id == $id) {
-            $data = [
-                'doctor' => $doctor,
-                'hospitals' => Hospital::where('city_id', $doctor->city_id)->paginate(5),
-                'detail' => DoctorDetail::where('doctor_id', $doctor->city_id)
-            ];
-
-            return view('pages.profile-hospital')->with('data', $data);
-        }
-        return redirect()->back()->with('warning', 'Anda tidak berhak mengakses laman tersebut.');
-    }
-
-    public function regHospital(Request $request)
-    {
-        $this->validate($request, [
-            'hospital_id' => 'required'
-        ]);
-
-        $dd = new DoctorDetail;
-        $dd->doctor_id = $this->currentUser()->id;
-        $dd->hospital_id = $request->input('hospital_id');
-
-        if($dd->save()) {
-            return redirect(route('doctor.profile.hospital', $this->currentUser()->id))->with('success', 'Rumah Sakit baru ditambahkan !');
-        }
-        return redirect(route('doctor.profile.hospital', $this->currentUser()->id))->with('failed', 'Gagal menambah Rumah Sakit.');
-    }
-
-    public function unregHospital($doctorId, $hospitalId)
-    {
-        if($this->currentUser()->id != $doctorId) {
-            return redirect()->back()->with('warning', 'Anda tidak berhak mengakses laman tersebut.');
-        }
-        $dd = DoctorDetail::where('doctor_id', $this->currentUser()->id)
-            ->where('hospital_id', $hospitalId);
-        if($dd != null) {
-            if($dd->delete()) {
-                return redirect(route('doctor.profile.hospital', $this->currentUser()->id))->with('success', 'Rumah Sakit dihapus !');
-            }
-            return redirect(route('doctor.profile.hospital', $this->currentUser()->id))->with('failed', 'Gagal menghapus Rumah Sakit, Data tidak ditemukan.');
-        }
-        return redirect(route('doctor.profile.hospital', $this->currentUser()->id))->with('failed', 'Error !, Telah terjadi kesalahan.');
-    }
-
+ 
     /**
      * Get current logged in Doctor
      *

@@ -41,9 +41,9 @@
             <div class="card" style="width: 18rem;">
                 <br> <br>
                 @if($doctor->profile_picture != null)
-                <img src="{{ asset('storage/user_images/').'/'.$doctor->profile_picture }}" class="card-user-profile-photo " alt="{{$doctor->name}}">
+                <img src="{{ asset('user_images/').'/'.$doctor->profile_picture }}" class="card-user-profile-photo " alt="{{$doctor->name}}">
                 @else
-                <img src="{{ asset('storage/images/felicia.jpg')}}" class="card-user-profile-photo " alt="{{$doctor->name}}">
+                <img src="{{ asset('images/felicia.jpg')}}" class="card-user-profile-photo " alt="{{$doctor->name}}">
                 @endif
                 <div class="card-body ">
                     <h5 class="text-center">Dr. {{$doctor->name}}, {{$doctor->getSpecialty()->degree}}</h5>

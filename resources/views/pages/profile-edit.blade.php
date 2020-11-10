@@ -21,7 +21,7 @@
                         <div class="col-md-12 form-group">
                             <div class="col-md-4">
                                 <div style="width: 121px; height: 121px; border: 1px solid #ddd">
-                                    <img id="preview" class="img-responsive" src="{{ asset('storage/user_images/'.$data[session('guard')]->profile_picture) }}">
+                                    <img id="preview" class="img-responsive" src="{{ asset('user_images/'.$data[session('guard')]->profile_picture) }}">
                                 </div>
                                 @if($data[session('guard')]->profile_picture != "user-default.jpg")
                                     <a class="btn btn-danger btn-sm" style="width: 121px"

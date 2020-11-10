@@ -73,6 +73,8 @@
 <body class="
     @if(session('role') == "Doctor")
         skin-yellow
+    @elseif(session('role') == "Pharmacist")
+        skin-blue
     @else
         skin-red
     @endif
@@ -82,7 +84,7 @@
 
 <div class="wrapper">
     <div class="loading-box" id="loading">
-        <img src="{{ asset('storage/images/loading-adm.gif') }}" class="loading-img" alt="Loading...">
+        <img src="{{ asset('images/loading-adm.gif') }}" class="loading-img" alt="Loading...">
     </div>
 
     <div id="bodyContent" >
@@ -97,14 +99,14 @@
                 " class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">
-                <img src="{{ asset('storage/images/LOGO-S.png') }}" alt="LOGO" width="50%" border="0">
+                <img src="{{ asset('/images/LOGO-S.png') }}" alt="LOGO" width="50%" border="0">
             </span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg">
                 @if(session('role') == "Doctor")
-                    <img src="{{ asset('storage/images/sifiks2.png') }}" alt="sifiks2" width="40%" border="0">
+                    <img src="{{ asset('/images/sifiks2.png') }}" alt="sifiks2" width="40%" border="0">
                 @else
-                    <img src="{{ asset('storage/images/sifiks5.png') }}" alt="sifiks5" width="40%" border="0">
+                    <img src="{{ asset('/images/sifiks5.png') }}" alt="sifiks5" width="40%" border="0">
                 @endif
             </span>
             </a>
@@ -122,13 +124,13 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{ asset('storage/user_images/'.Auth::guard(session('guard'))->user()->profile_picture) }}" class="user-image" alt="User Image">
+                                <img src="{{ asset('/user_images/'.Auth::guard(session('guard'))->user()->profile_picture) }}" class="user-image" alt="User Image">
                                 <span class="hidden-xs">{{ Auth::guard(session('guard'))->user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="{{ asset('storage/user_images/'.Auth::guard(session('guard'))->user()->profile_picture) }}" class="img-circle" alt="User Image">
+                                    <img src="{{ asset('/user_images/'.Auth::guard(session('guard'))->user()->profile_picture) }}" class="img-circle" alt="User Image">
 
                                     <p>
                                         {{ Auth::guard(session('guard'))->user()->name }}
@@ -179,7 +181,7 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="{{ asset('storage/user_images/'.Auth::guard(session('guard'))->user()->profile_picture) }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('user_images/'.Auth::guard(session('guard'))->user()->profile_picture) }}" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>{{ Auth::guard(session('guard'))->user()->name }}</p>
@@ -250,15 +252,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('member.index') }}">
-                                <i class="fa fa-users"></i>
-                                <span>Member</span>
+                            <a href="{{ route('hospital.index') }}">
+                                <i class="fa fa-diagnoses"></i>
+                                <span>Apoteker</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('hospital.index') }}">
-                                <i class="fa fas fa-hospital"></i>
-                                <span>Rumah Sakit</span>
+                            <a href="{{ route('member.index') }}">
+                                <i class="fa fa-users"></i>
+                                <span>Member</span>
                             </a>
                         </li>
                     @endif

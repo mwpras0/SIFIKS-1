@@ -12,7 +12,7 @@
                     <label class="col-md-3 col-form-label text-md-right">Foto Profil</label>
                     <div class="col-md-6">
                         <div class="ml-0 mb-md-4" style="border: 1px solid #ddd; width: 175px; height: 175px">
-                            <img id="preview" src="{{ asset('storage/user_images/'.$data['user']->profile_picture) }}" class="img-fluid" alt="Foto Anda">
+                            <img id="preview" src="{{ asset('user_images/'.$data['user']->profile_picture) }}" class="img-fluid" alt="Foto Anda">
                             @if($data['user']->profile_picture != "user-default.jpg" && $data['user']->profile_picture != "user-default-male.png" && $data['user']->profile_picture != "user-default-female.png")
                                 <a href="{{ route('user.image.remove') }}" class="btn btn-danger btn-sm form-control">
                                     <strong>Hapus foto</strong>

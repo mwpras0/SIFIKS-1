@@ -1,6 +1,6 @@
 # UBAH LINE 3 SESUAI DENGAN NAMA DATABASE KALIAN e.g 'USE db_sifiks'
 
-USE sifiks;
+USE db_sifiks;
 INSERT INTO `cities` (name, created_at, updated_at) VALUES
 ('KOTA BANDA ACEH', NOW(), NOW()),
 ('KOTA SABANG', NOW(), NOW()),

@@ -22,7 +22,7 @@
                 <div class="box box-widget">
                     <div class="box-header with-border">
                         <div class="user-block">
-                            <img class="img-circle" src="{{ asset('storage/user_images/'.$data['thread']->user->profile_picture) }}" alt="User Image">
+                            <img class="img-circle" src="{{ asset('user_images/'.$data['thread']->user->profile_picture) }}" alt="User Image">
                             <span class="username"><a href="#">{{ $data['thread']->user->name  }}</a></span>
                             <span class="description">{{ $data['thread']->created_at->diffForHumans() }}</span>
                         </div>
@@ -65,7 +65,7 @@
                     @if($data['thread']->doctor_id != null)
                         <div class="box-footer box-comments">
                             <div class="box-comment">
-                                <img class="img-circle img-sm" src="{{ asset('storage/user_images/'.$data['thread']->doctor->profile_picture) }}" alt="User Image">
+                                <img class="img-circle img-sm" src="{{ asset('user_images/'.$data['thread']->doctor->profile_picture) }}" alt="User Image">
                                 <div class="comment-text">
                                     <span class="username">
                                         dr. {{ $data['thread']->doctor->name }}
@@ -81,7 +81,7 @@
                 @include('layouts.inc.recent-thread')
             </div>
             <div class="col col-md-4">
-                <a href="{{ route('user.thread.create') }}"><img src="{{ asset('storage/images/doctor.png') }}" alt="doctor" width="350"></a>
+                <a href="{{ route('user.thread.create') }}"><img src="{{ asset('images/doctor.png') }}" alt="doctor" width="350"></a>
             </div>
         </div>
     </div>

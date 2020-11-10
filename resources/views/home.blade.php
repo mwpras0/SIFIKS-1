@@ -15,7 +15,12 @@
         <div class="jumbotron p-4 p-md-5 text-white rounded bg-primary">
             <div class="row justify-content-center">
                 <div class="col-md-6 px-0">
-                    <img src="{{ asset('storage/images/sifiks5.png') }}" width="45%" alt="sifiks5" border="0">
+                    @guest
+                    <img src="{{ asset('images/sifiks5.png') }}" width="45%" alt="sifiks5" border="0">
+                    <p class="lead my-3 font-bold" >Kekayaan bukan berasal dari uang, melainkan kesehatan</p>
+                    <br>
+                    @else
+                    <img src="{{ asset('images/sifiks5.png') }}" width="45%" alt="sifiks5" border="0">
                     <p class="lead my-3 font-bold" >Kekayaan bukan berasal dari uang, melainkan kesehatan</p>
                     <br>
                     <div class="row col-md-8">
@@ -34,14 +39,12 @@
                             <div class="btn-group mr-1" role="group">
                                 <a href="{{ route('search.doctor') }}"><button type="button" class="btn btn-light btn-sm"><b>Cari Dokter</b></button></a>
                             </div>
-                            <div class="btn-group" role="group">
-                                <a href="{{route('search.index.hospital')}}"><button type="button" class="btn btn-light btn-sm"><b>Cari Rumah Sakit</b></button></a>
-                            </div>
                         </div>
                     </div>
+                    @endguest
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('storage/images/dokterhome.png') }}" alt="Dokter" class="float-right" width="100%" >
+                    <img src="{{ asset('images/dokterhome.png') }}" alt="Dokter" class="float-right" width="100%" >
 
                 </div>
             </div>
@@ -56,9 +59,9 @@
             <a href="{{route('user.article.show',['id'=>$art->id])}}" class="col-md-4 text-decoration-none">
                 <div class="card mb-4 shadow-sm">
                     @if($art->cover_image != null)
-                        <img src="{{ asset ('storage/cover_images/').'/'.$art->cover_image}}"  alt="{{$art->title}}" class="img-fluid" >
+                        <img src="{{ asset ('cover_images/').'/'.$art->cover_image}}"  alt="{{$art->title}}" class="img-fluid" >
                     @else
-                        <img src="{{ asset ('storage/cover_images/noimage.jpg')}}"  alt="{{$art->title}}" class="img-fluid" >
+                        <img src="{{ asset ('cover_images/noimage.jpg')}}"  alt="{{$art->title}}" class="img-fluid" >
                     @endif
                     <div class="card-body text-black-50">
                         <h4>{{ $art->title }}</h4>
@@ -95,7 +98,7 @@
                 @include('layouts.inc.recent-thread')
             </div>
             <div class="col col-md-4">
-                <a href="{{ route('user.thread.create') }}"><img src="{{ asset('storage/images/doctor.png') }}" alt="doctor" class="mt-5" width="100%"></a>
+                <a href="{{ route('user.thread.create') }}"><img src="{{ asset('images/doctor.png') }}" alt="doctor" class="mt-5" width="100%"></a>
             </div>
         </div>
     </div>

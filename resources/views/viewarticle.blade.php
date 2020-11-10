@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 @if ($article->cover_image != null && $article->cover_image != "noimage.jpg")
-                    <img src="{{ asset('storage/cover_images/'.$article->cover_image) }}" alt="{{$article->title}}" width="100%">
+                    <img src="{{ asset('cover_images/'.$article->cover_image) }}" alt="{{$article->title}}" width="100%">
                 @endif
                 <div class="row">
                     <div class="col-md-12">
@@ -64,9 +64,9 @@
             <div class="col col-md-4">
                 <br>
                 <br>
-                <a href="{{ route('user.thread.create') }}"><img src="{{ asset('storage/images/doctor.png') }}" alt="doctor" width="100%"></a>
+                <a href="{{ route('user.thread.create') }}"><img src="{{ asset('images/doctor.png') }}" alt="doctor" width="100%"></a>
                 <hr>
-                <img src="{{ asset('storage/images/health.png') }}" alt="health" width="100%">
+                <img src="{{ asset('images/health.png') }}" alt="health" width="100%">
             </div>
         </div>
     </div>

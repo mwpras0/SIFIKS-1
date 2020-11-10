@@ -28,13 +28,13 @@
 </head>
 <body>
     <div class="loading-box" id="loading">
-        <img class="loading-img" src="{{ asset('storage/images/loading.gif') }}">
+        <img class="loading-img" src="{{ asset('images/loading.gif') }}">
     </div>
 
     <div id="bodyContent" style="display: none">
         @yield('content')
         <footer class="foot">
-            <p class="text-center">Copyright © 2019 <a href="https://flying-coders.github.io/" target="_blank">Flying Coders</a></p>
+            <p class="text-center">Copyright © 2020 Fantastic Four</p>
         </footer>
     </div>
 

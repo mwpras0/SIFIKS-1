@@ -60,7 +60,7 @@
                 @include('layouts.inc.recent-thread')
             </div>
             <div class="col col-md-4">
-                <a href="#"><img src="{{ asset('storage/images/health.png') }}" alt="health" border="0"width="350"></a>
+                <a href="#"><img src="{{ asset('images/health.png') }}" alt="health" border="0"width="350"></a>
             </div>
         </div>
     </div>

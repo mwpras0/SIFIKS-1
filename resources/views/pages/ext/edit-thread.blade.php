@@ -22,7 +22,7 @@
         <div class="box box-widget">
             <div class="box-header with-border">
                 <div class="user-block">
-                    <img class="img-circle" src="{{ asset('storage/user_images/'.$data['thread']->user->profile_picture) }}" alt="User Image">
+                    <img class="img-circle" src="{{ asset('user_images/'.$data['thread']->user->profile_picture) }}" alt="User Image">
                     <span class="username"><a href="#">{{ $data['thread']->user->name  }}</a></span>
                     <span class="description">{{ $data['thread']->created_at->diffForHumans() }}</span>
                 </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="box-footer box-comments" style="padding: 20px">
                 <div class="box-comment">
-                    <img class="img-circle img-sm" src="{{ asset('storage/user_images/'.$data['doctor']->profile_picture) }}" alt="User Image">
+                    <img class="img-circle img-sm" src="{{ asset('user_images/'.$data['doctor']->profile_picture) }}" alt="User Image">
                     <div class="comment-text">
                         <span class="username">
                             dr. {{ $data['doctor']->name }}

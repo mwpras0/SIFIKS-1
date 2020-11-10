@@ -41,7 +41,7 @@
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-md-3">
-                    <img src="{{ asset('storage/images/namira2.jpg') }}" alt="..." class="card-img">
+                    <img src="{{ asset('images/namira2.jpg') }}" alt="..." class="card-img">
                 </div>
                 <div class="col-md-9">
                     <div class="card-body">
@@ -56,7 +56,7 @@
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-md-3">
-                    <img src="{{ asset('storage/images/namira.jpg') }}" alt="..." class="card-img">
+                    <img src="{{ asset('images/namira.jpg') }}" alt="..." class="card-img">
                 </div>
                 <div class="col-md-9">
                     <div class="card-body">
